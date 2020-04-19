@@ -28,10 +28,13 @@ public class VerificActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verific);
         webView = findViewById(R.id.web1);
         status = findViewById(R.id.status);
+        if(url.length()>37){
         String verf =url.substring(0, 37);
         if(verf.equals(migracion)){
             status.setImageResource(R.drawable.verif);
         }else{
+            status.setImageResource(R.drawable.falseimg);
+        }}else{
             status.setImageResource(R.drawable.falseimg);
         }
         webView.getSettings().setJavaScriptEnabled(true);
